@@ -33,3 +33,12 @@ jobs:
         with: 
           name: coverage-report
           path: htmlcov
+
+      - name: Train and save ML model
+        run: python train_model.py
+
+      - name: Upload trained model artifact
+        uses: actions/upload-artifact@4
+        with:
+          name: trained-model
+          path: model.joblib
