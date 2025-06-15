@@ -22,5 +22,7 @@ jobs:
       - name: Run Flake8 (Line Check)
         run: flake8 .
 
-      - name: Run tests
-        run: pytest tests/
+      - name: Run tests with coverage
+        run: |
+           coverage run -m pytest tests/
+           coverage report -m
