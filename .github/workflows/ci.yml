@@ -16,5 +16,11 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirement.txt
 
+      - name: Run Black (Code Formatter Check)
+        run: black --check .
+
+      - name: Run Flake8 (Line Check)
+        run: flake8 .
+
       - name: Run tests
         run: pytest tests/
